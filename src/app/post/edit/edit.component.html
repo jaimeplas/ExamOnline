@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Actualizar Persona</h1>
+   
+    <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
+         
+    <form [formGroup]="form" (ngSubmit)="submit()">
+   
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input
+                formControlName="name"
+                id="name"
+                type="text"
+                [(ngModel)]="post.name"
+                class="form-control">
+            <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+                <div *ngIf="f.name.errors">Nombre es requerido.</div>
+            </div>
+ 
+        </div>
+          
+        <div class="form-group">
+            <label for="phone">Telefono</label>
+            <input
+                formControlName="phone"
+                id="phone"
+                type="text"
+                [(ngModel)]="post.phone"
+                class="form-control">
+            <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+                <div *ngIf="f.name.errors">Nombre es requerido.</div>
+            </div>
+ 
+        </div>
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+    </form>
+</div>
